@@ -1,0 +1,45 @@
+Phase = starting point of the initial cycle of waveform
+Amplitude = loudness of the signal, too high of amplitude causes clipping
+
+Amplitude vs Decibels
+  amplitude - amount of air pressure change (1 to -1); Quantitative
+  decibels (dB) - relative (percieved) unit of measurement of power
+    decibels = 10 x log10 (level / referenceLevel)
+
+Audio Representations
+- 2 dimensions (time vs amplitude) ; time domain
+- 3 dimensions (time vs frequency vs amplitude) ; frequency domain
+Time is the core of music, it will always be present
+
+Digital Conversion Fundamentals
+- Analog-to-digital converter: quantization of acoustic signal to binary values
+  - ex: Audio Interface, Sound Cards, 
+- Sampling Rate: number of times an analog signal is measured per second
+  - points are recorded and plotted and the signal curves are inferred from those recorded points
+- Nyquist Frequency: half of the sampling rate -and- the maximum frequency that can be played off a recording
+  - ex: 48000 sample rate = 24000 Nyquist Frequency
+- Aliasing / Foldover: if original frequency > 1/2 sampling rate, new frequency = sampling frequency-original
+  - frequency will 'sound again' as frequency roughly doubles
+- Lowpass Anti-ailasign Filter: used to ensure that there are not any frequencies above the nyquist frequency; hard cutoff above audible spectrum 
+- Bit Depth / Bit-Rate: number of bits used to describe the amplitude (16 bit is kinda default); like Sample Rate but for amplitude
+  - Lower bit rate creates a greater quantizatioin of values
+
+Python Visualizing Time Domain
+A Library is a collection of functions or logic
+- Matplotlib is a plotting library
+  # import matplotlib.pylab as plt
+  - 2D plots can be generated with 
+    # plt.plot(xvals, yvals)
+- Functions: useful lwhen you havve a block of code/logic that you want to use multiple times
+  - To create a function you need to define (def) its name and what arguments it's going to recieve
+    - the argument name is what the variable will be called wihtin the function, when callinig the function it can have a different name
+
+Ex:
+# define function
+def printText(input):
+  print(input) # output of function
+
+# call function
+printText('Hello World!')
+
+Output function "print" just displays values input where "return" uses the output as an 'updatable variable'
